@@ -14,8 +14,8 @@ public class Launcher {
      */
     public final void run() {
         ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
-        Greeter greeter = context.getBean(Greeter.class);
-        greeter.greet();
+        Interpreter interpreter = context.getBean(Interpreter.class);
+        interpreter.run();
     }
 
     /**
