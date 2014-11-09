@@ -9,15 +9,43 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface SimpleListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link SimpleParser#expression}.
+	 * Enter a parse tree produced by the {@code parentheses}
+	 * labeled alternative in {@link SimpleParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpression(@NotNull SimpleParser.ExpressionContext ctx);
+	void enterParentheses(@NotNull SimpleParser.ParenthesesContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link SimpleParser#expression}.
+	 * Exit a parse tree produced by the {@code parentheses}
+	 * labeled alternative in {@link SimpleParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpression(@NotNull SimpleParser.ExpressionContext ctx);
+	void exitParentheses(@NotNull SimpleParser.ParenthesesContext ctx);
+
+	/**
+	 * Enter a parse tree produced by the {@code MulDivMod}
+	 * labeled alternative in {@link SimpleParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterMulDivMod(@NotNull SimpleParser.MulDivModContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code MulDivMod}
+	 * labeled alternative in {@link SimpleParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitMulDivMod(@NotNull SimpleParser.MulDivModContext ctx);
+
+	/**
+	 * Enter a parse tree produced by the {@code AddSub}
+	 * labeled alternative in {@link SimpleParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterAddSub(@NotNull SimpleParser.AddSubContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code AddSub}
+	 * labeled alternative in {@link SimpleParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitAddSub(@NotNull SimpleParser.AddSubContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link SimpleParser#statement}.
@@ -53,24 +81,15 @@ public interface SimpleListener extends ParseTreeListener {
 	void exitProgram(@NotNull SimpleParser.ProgramContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link SimpleParser#primary}.
+	 * Enter a parse tree produced by the {@code int}
+	 * labeled alternative in {@link SimpleParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrimary(@NotNull SimpleParser.PrimaryContext ctx);
+	void enterInt(@NotNull SimpleParser.IntContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link SimpleParser#primary}.
+	 * Exit a parse tree produced by the {@code int}
+	 * labeled alternative in {@link SimpleParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrimary(@NotNull SimpleParser.PrimaryContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link SimpleParser#literal}.
-	 * @param ctx the parse tree
-	 */
-	void enterLiteral(@NotNull SimpleParser.LiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SimpleParser#literal}.
-	 * @param ctx the parse tree
-	 */
-	void exitLiteral(@NotNull SimpleParser.LiteralContext ctx);
+	void exitInt(@NotNull SimpleParser.IntContext ctx);
 }

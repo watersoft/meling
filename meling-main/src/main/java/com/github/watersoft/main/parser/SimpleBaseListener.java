@@ -17,13 +17,39 @@ public class SimpleBaseListener implements SimpleListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpression(@NotNull SimpleParser.ExpressionContext ctx) { }
+	@Override public void enterParentheses(@NotNull SimpleParser.ParenthesesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpression(@NotNull SimpleParser.ExpressionContext ctx) { }
+	@Override public void exitParentheses(@NotNull SimpleParser.ParenthesesContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMulDivMod(@NotNull SimpleParser.MulDivModContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMulDivMod(@NotNull SimpleParser.MulDivModContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAddSub(@NotNull SimpleParser.AddSubContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAddSub(@NotNull SimpleParser.AddSubContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -69,26 +95,13 @@ public class SimpleBaseListener implements SimpleListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimary(@NotNull SimpleParser.PrimaryContext ctx) { }
+	@Override public void enterInt(@NotNull SimpleParser.IntContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimary(@NotNull SimpleParser.PrimaryContext ctx) { }
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterLiteral(@NotNull SimpleParser.LiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitLiteral(@NotNull SimpleParser.LiteralContext ctx) { }
+	@Override public void exitInt(@NotNull SimpleParser.IntContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

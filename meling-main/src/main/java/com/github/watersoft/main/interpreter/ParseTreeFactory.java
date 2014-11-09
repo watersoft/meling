@@ -8,21 +8,21 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.springframework.stereotype.Component;
 
 /**
- * Interpret the generated parse tree.
+ * Simple grammar parse tree factory.
  * Created by Wouter on 11/8/2014.
  */
 @Component
-public class Interpreter {
+public class ParseTreeFactory {
+
     /**
-     * @param input Input string for the program to interpret.
+     * @param input Input string for the program to parse.
+     * @return The parse tree for the program rule.
      */
-    public final void interpret(final String input) {
+    public final ParseTree getProgramTree(final String input) {
         ANTLRInputStream stream = new ANTLRInputStream(input);
         SimpleLexer lexer = new SimpleLexer(stream);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         SimpleParser parser = new SimpleParser(tokens);
-        ParseTree tree = parser.program();
-
-        System.out.println(tree.toStringTree());
+        return parser.program();
     }
 }

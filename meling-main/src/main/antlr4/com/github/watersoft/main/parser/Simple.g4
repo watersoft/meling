@@ -13,28 +13,17 @@ statement
     ;
 
 expression
-    : primary
-    | expression ('*'|'/'|'%') expression
-    | expression ('+'|'-') expression
+    : expression op=('*'|'/'|'%') expression    # MulDivMod
+    | expression op=('+'|'-') expression        # AddSub
+    | INT                                       # int
+    | '(' expression ')'                        # parentheses
     ;
 
-primary
-    : '(' expression ')'
-    | literal
-    ;
-
-literal
-    : IntegerLiteral
-    ;
-
-IntegerLiteral
-    : DecimalIntegerLiteral
-    ;
-
-fragment
-DecimalIntegerLiteral
-    : INT
-    ;
+MUL : '*' ;
+DIV : '/' ;
+MOD : '%' ;
+ADD : '+' ;
+SUB : '-' ;
 
 ID  : [_a-zA-Z] [_a-zA-Z0-9]* ;
 INT : [0-9]+ ;

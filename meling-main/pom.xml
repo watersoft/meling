@@ -37,6 +37,7 @@
                         </goals>
                         <configuration>
                             <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+                            <visitor>true</visitor>
                         </configuration>
                     </execution>
                 </executions>
