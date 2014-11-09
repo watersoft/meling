@@ -12,8 +12,15 @@
     <artifactId>watersoft-meling-main</artifactId>
 
     <properties>
-        <antlr.version>4.3</antlr.version>
+        <antlr.version>4.4.1-dev</antlr.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>my-local-repo</id>
+            <url>file://${project.basedir}/my-repo</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -25,18 +32,19 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.antlr</groupId>
-                <artifactId>antlr4-maven-plugin</artifactId>
-                <version>${antlr.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>antlr4</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            <!-- Compile time parser generator -->
+            <!--<plugin>-->
+                <!--<groupId>org.antlr</groupId>-->
+                <!--<artifactId>antlr4-maven-plugin</artifactId>-->
+                <!--<version>${antlr.version}</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>antlr4</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -67,6 +75,27 @@
                             <overWriteReleases>false</overWriteReleases>
                             <overWriteSnapshots>false</overWriteSnapshots>
                             <overWriteIfNewer>true</overWriteIfNewer>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+                <executions>
+                    <!-- Install local ANTLR library since the maven repository is outdated -->
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <groupId>org.antlr</groupId>
+                            <artifactId>antlr4-runtime</artifactId>
+                            <version>${antlr.version}</version>
+                            <packaging>jar</packaging>
+                            <file>${project.basedir}/lib/antlr-${antlr.version}-complete.jar</file>
                         </configuration>
                     </execution>
                 </executions>

@@ -6,5 +6,5 @@
 
 <suppressions>
     <suppress files="TheClassToIgnore\.java" checks="[a-zA-Z0-9]*"/>
-    <suppress checks="." files="com[\\/]github[\\/]watersoft[\\/]main[\\/]generated[\\/]"/>
+    <suppress checks="." files="com[\\/]github[\\/]watersoft[\\/]main[\\/]parser[\\/]"/>
 </suppressions>
