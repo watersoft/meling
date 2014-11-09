@@ -1,4 +1,4 @@
-// Generated from C:/Users/Wouter/IdeaProjects/meling/meling-main/src/main/antlr4/com/github/watersoft/main/parser\Simple.g4 by ANTLR 4.4.1-dev
+// Generated from com\github\watersoft\main\parser\Simple.g4 by ANTLR 4.3
 package com.github.watersoft.main.parser;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -24,6 +24,7 @@ public class SimpleBaseListener implements SimpleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExpression(@NotNull SimpleParser.ExpressionContext ctx) { }
+
 	/**
 	 * {@inheritDoc}
 	 *
@@ -36,6 +37,7 @@ public class SimpleBaseListener implements SimpleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStatement(@NotNull SimpleParser.StatementContext ctx) { }
+
 	/**
 	 * {@inheritDoc}
 	 *
@@ -48,6 +50,7 @@ public class SimpleBaseListener implements SimpleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitBlock(@NotNull SimpleParser.BlockContext ctx) { }
+
 	/**
 	 * {@inheritDoc}
 	 *
@@ -60,6 +63,7 @@ public class SimpleBaseListener implements SimpleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitProgram(@NotNull SimpleParser.ProgramContext ctx) { }
+
 	/**
 	 * {@inheritDoc}
 	 *
@@ -72,6 +76,7 @@ public class SimpleBaseListener implements SimpleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitPrimary(@NotNull SimpleParser.PrimaryContext ctx) { }
+
 	/**
 	 * {@inheritDoc}
 	 *

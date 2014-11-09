@@ -1,4 +1,4 @@
-// Generated from C:/Users/Wouter/IdeaProjects/meling/meling-main/src/main/antlr4/com/github/watersoft/main/parser\Simple.g4 by ANTLR 4.4.1-dev
+// Generated from com\github\watersoft\main\parser\Simple.g4 by ANTLR 4.3
 package com.github.watersoft.main.parser;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
@@ -18,6 +18,7 @@ public interface SimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpression(@NotNull SimpleParser.ExpressionContext ctx);
+
 	/**
 	 * Enter a parse tree produced by {@link SimpleParser#statement}.
 	 * @param ctx the parse tree
@@ -28,6 +29,7 @@ public interface SimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitStatement(@NotNull SimpleParser.StatementContext ctx);
+
 	/**
 	 * Enter a parse tree produced by {@link SimpleParser#block}.
 	 * @param ctx the parse tree
@@ -38,6 +40,7 @@ public interface SimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitBlock(@NotNull SimpleParser.BlockContext ctx);
+
 	/**
 	 * Enter a parse tree produced by {@link SimpleParser#program}.
 	 * @param ctx the parse tree
@@ -48,6 +51,7 @@ public interface SimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitProgram(@NotNull SimpleParser.ProgramContext ctx);
+
 	/**
 	 * Enter a parse tree produced by {@link SimpleParser#primary}.
 	 * @param ctx the parse tree
@@ -58,6 +62,7 @@ public interface SimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPrimary(@NotNull SimpleParser.PrimaryContext ctx);
+
 	/**
 	 * Enter a parse tree produced by {@link SimpleParser#literal}.
 	 * @param ctx the parse tree

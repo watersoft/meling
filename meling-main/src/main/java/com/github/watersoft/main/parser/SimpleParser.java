@@ -1,4 +1,4 @@
-// Generated from C:/Users/Wouter/IdeaProjects/meling/meling-main/src/main/antlr4/com/github/watersoft/main/parser\Simple.g4 by ANTLR 4.4.1-dev
+// Generated from com\github\watersoft\main\parser\Simple.g4 by ANTLR 4.3
 package com.github.watersoft.main.parser;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class SimpleParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.4.1-dev", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.3", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -65,11 +65,6 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitProgram(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitProgram(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ProgramContext program() throws RecognitionException {
@@ -110,11 +105,6 @@ public class SimpleParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitBlock(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitBlock(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -170,11 +160,6 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitStatement(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitStatement(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final StatementContext statement() throws RecognitionException {
@@ -218,11 +203,6 @@ public class SimpleParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitExpression(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitExpression(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -271,6 +251,7 @@ public class SimpleParser extends Parser {
 						setState(32); expression(3);
 						}
 						break;
+
 					case 2:
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
@@ -325,11 +306,6 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitPrimary(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitPrimary(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final PrimaryContext primary() throws RecognitionException {
@@ -381,11 +357,6 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitLiteral(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitLiteral(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final LiteralContext literal() throws RecognitionException {
@@ -417,6 +388,7 @@ public class SimpleParser extends Parser {
 	private boolean expression_sempred(ExpressionContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0: return precpred(_ctx, 2);
+
 		case 1: return precpred(_ctx, 1);
 		}
 		return true;
