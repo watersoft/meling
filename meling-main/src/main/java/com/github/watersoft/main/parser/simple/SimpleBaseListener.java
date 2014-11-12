@@ -1,5 +1,5 @@
-// Generated from com\github\watersoft\main\parser\Simple.g4 by ANTLR 4.3
-package com.github.watersoft.main.parser;
+// Generated from com\github\watersoft\main\parser\simple\Simple.g4 by ANTLR 4.3
+package com.github.watersoft.main.parser.simple;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -50,19 +50,6 @@ public class SimpleBaseListener implements SimpleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAddSub(@NotNull SimpleParser.AddSubContext ctx) { }
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterStatement(@NotNull SimpleParser.StatementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitStatement(@NotNull SimpleParser.StatementContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

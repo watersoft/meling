@@ -1,5 +1,5 @@
-// Generated from com\github\watersoft\main\parser\Simple.g4 by ANTLR 4.3
-package com.github.watersoft.main.parser;
+// Generated from com\github\watersoft\main\parser\simple\Simple.g4 by ANTLR 4.3
+package com.github.watersoft.main.parser.simple;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
@@ -35,14 +35,6 @@ public class SimpleBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitAddSub(@NotNull SimpleParser.AddSubContext ctx) { return visitChildren(ctx); }
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitStatement(@NotNull SimpleParser.StatementContext ctx) { return visitChildren(ctx); }
 
 	/**
 	 * {@inheritDoc}

@@ -1,15 +1,16 @@
-package com.github.watersoft.main.interpreter;
+package com.github.watersoft.main.interpreter.simple;
 
-import com.github.watersoft.main.parser.SimpleBaseVisitor;
-import com.github.watersoft.main.parser.SimpleParser;
+import com.github.watersoft.main.interpreter.UnexpectedTokenException;
+import com.github.watersoft.main.parser.simple.SimpleBaseVisitor;
+import com.github.watersoft.main.parser.simple.SimpleParser;
 import org.springframework.stereotype.Component;
 
 /**
- * Visits the parse tree and evaluates statements.
+ * Visits the parse tree and evaluates expressions.
  * Created by Wouter on 11/9/2014.
  */
 @Component
-public class EvaluationVisitor extends SimpleBaseVisitor<Integer> {
+public class ExpressionVisitor extends SimpleBaseVisitor<Integer> {
 
     @Override
     public final Integer visitMulDivMod(final SimpleParser.MulDivModContext ctx) {
@@ -51,12 +52,5 @@ public class EvaluationVisitor extends SimpleBaseVisitor<Integer> {
     @Override
     public final Integer visitParentheses(final SimpleParser.ParenthesesContext ctx) {
         return visit(ctx.expression());
-    }
-
-    @Override
-    public final Integer visitStatement(final SimpleParser.StatementContext ctx) {
-        int value = visit(ctx.expression());
-        System.out.println(value);
-        return 0;
     }
 }

@@ -1,5 +1,5 @@
-// Generated from com\github\watersoft\main\parser\Simple.g4 by ANTLR 4.3
-package com.github.watersoft.main.parser;
+// Generated from com\github\watersoft\main\parser\simple\Simple.g4 by ANTLR 4.3
+package com.github.watersoft.main.parser.simple;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -46,17 +46,6 @@ public interface SimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAddSub(@NotNull SimpleParser.AddSubContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link SimpleParser#statement}.
-	 * @param ctx the parse tree
-	 */
-	void enterStatement(@NotNull SimpleParser.StatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link SimpleParser#statement}.
-	 * @param ctx the parse tree
-	 */
-	void exitStatement(@NotNull SimpleParser.StatementContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link SimpleParser#block}.

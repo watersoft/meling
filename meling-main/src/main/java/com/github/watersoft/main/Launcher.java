@@ -1,8 +1,8 @@
 package com.github.watersoft.main;
 
-import com.github.watersoft.main.config.ApplicationConfiguration;
-import com.github.watersoft.main.interpreter.EvaluationVisitor;
-import com.github.watersoft.main.interpreter.ParseTreeFactory;
+import com.github.watersoft.main.config.SimpleConfiguration;
+import com.github.watersoft.main.interpreter.simple.ExpressionVisitor;
+import com.github.watersoft.main.interpreter.simple.ParseTreeFactory;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,14 +24,14 @@ public class Launcher {
      * Run the application.
      */
     public final void run() {
-        ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(SimpleConfiguration.class);
 
         LOGGER.info("Getting parse tree.");
         ParseTreeFactory factory = context.getBean(ParseTreeFactory.class);
         ParseTree tree = factory.getProgramTree("{1+2*3;1*2+3;(1+2)*3;}");
 
         LOGGER.info("Visiting parse tree.");
-        EvaluationVisitor visitor = context.getBean(EvaluationVisitor.class);
+        ExpressionVisitor visitor = context.getBean(ExpressionVisitor.class);
         visitor.visit(tree);
     }
 

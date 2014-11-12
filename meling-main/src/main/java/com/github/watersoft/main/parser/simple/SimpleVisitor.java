@@ -1,5 +1,5 @@
-// Generated from com\github\watersoft\main\parser\Simple.g4 by ANTLR 4.3
-package com.github.watersoft.main.parser;
+// Generated from com\github\watersoft\main\parser\simple\Simple.g4 by ANTLR 4.3
+package com.github.watersoft.main.parser.simple;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -34,13 +34,6 @@ public interface SimpleVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitAddSub(@NotNull SimpleParser.AddSubContext ctx);
-
-	/**
-	 * Visit a parse tree produced by {@link SimpleParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStatement(@NotNull SimpleParser.StatementContext ctx);
 
 	/**
 	 * Visit a parse tree produced by {@link SimpleParser#block}.

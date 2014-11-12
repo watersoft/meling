@@ -1,24 +1,13 @@
-// Generated from com\github\watersoft\main\parser\Simple.g4 by ANTLR 4.3
-package com.github.watersoft.main.parser;
-import org.antlr.v4.runtime.FailedPredicateException;
-import org.antlr.v4.runtime.NoViableAltException;
-import org.antlr.v4.runtime.Parser;
-import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.RecognitionException;
-import org.antlr.v4.runtime.RuleContext;
-import org.antlr.v4.runtime.RuntimeMetaData;
-import org.antlr.v4.runtime.Token;
-import org.antlr.v4.runtime.TokenStream;
-import org.antlr.v4.runtime.atn.ATN;
-import org.antlr.v4.runtime.atn.ATNDeserializer;
-import org.antlr.v4.runtime.atn.ParserATNSimulator;
-import org.antlr.v4.runtime.atn.PredictionContextCache;
+// Generated from com\github\watersoft\main\parser\simple\Simple.g4 by ANTLR 4.3
+package com.github.watersoft.main.parser.simple;
+import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
-import org.antlr.v4.runtime.tree.ParseTreeListener;
-import org.antlr.v4.runtime.tree.ParseTreeVisitor;
-import org.antlr.v4.runtime.tree.TerminalNode;
-
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
+import org.antlr.v4.runtime.tree.*;
 import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class SimpleParser extends Parser {
@@ -35,9 +24,9 @@ public class SimpleParser extends Parser {
 		"'-'", "ID", "INT", "WS"
 	};
 	public static final int
-		RULE_program = 0, RULE_block = 1, RULE_statement = 2, RULE_expression = 3;
+		RULE_program = 0, RULE_block = 1, RULE_expression = 2;
 	public static final String[] ruleNames = {
-		"program", "block", "statement", "expression"
+		"program", "block", "expression"
 	};
 
 	@Override
@@ -88,7 +77,7 @@ public class SimpleParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(8); block();
+			setState(6); block();
 			}
 		}
 		catch (RecognitionException re) {
@@ -103,11 +92,11 @@ public class SimpleParser extends Parser {
 	}
 
 	public static class BlockContext extends ParserRuleContext {
-		public StatementContext statement(int i) {
-			return getRuleContext(StatementContext.class,i);
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
 		}
-		public List<StatementContext> statement() {
-			return getRuleContexts(StatementContext.class);
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
 		}
 		public BlockContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -135,65 +124,22 @@ public class SimpleParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(10); match(T__1);
-			setState(16);
+			setState(8); match(T__1);
+			setState(14);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T__4 || _la==INT) {
 				{
 				{
-				setState(11); statement();
-				setState(12); match(T__2);
+				setState(9); expression(0);
+				setState(10); match(T__2);
 				}
 				}
-				setState(18);
+				setState(16);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(19); match(T__0);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class StatementContext extends ParserRuleContext {
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public StatementContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_statement; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).enterStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final StatementContext statement() throws RecognitionException {
-		StatementContext _localctx = new StatementContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_statement);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(21); expression(0);
+			setState(17); match(T__0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -310,14 +256,14 @@ public class SimpleParser extends Parser {
 		int _parentState = getState();
 		ExpressionContext _localctx = new ExpressionContext(_ctx, _parentState);
 		ExpressionContext _prevctx = _localctx;
-		int _startState = 6;
-		enterRecursionRule(_localctx, 6, RULE_expression, _p);
+		int _startState = 4;
+		enterRecursionRule(_localctx, 4, RULE_expression, _p);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(29);
+			setState(25);
 			switch (_input.LA(1)) {
 			case INT:
 				{
@@ -325,7 +271,7 @@ public class SimpleParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(24); match(INT);
+				setState(20); match(INT);
 				}
 				break;
 			case T__4:
@@ -333,16 +279,16 @@ public class SimpleParser extends Parser {
 				_localctx = new ParenthesesContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(25); match(T__4);
-				setState(26); expression(0);
-				setState(27); match(T__3);
+				setState(21); match(T__4);
+				setState(22); expression(0);
+				setState(23); match(T__3);
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(39);
+			setState(35);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,3,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -350,22 +296,22 @@ public class SimpleParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(37);
+					setState(33);
 					switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
 					case 1:
 						{
 						_localctx = new MulDivModContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(31);
+						setState(27);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
-						setState(32);
+						setState(28);
 						((MulDivModContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MUL) | (1L << DIV) | (1L << MOD))) != 0)) ) {
 							((MulDivModContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(33); expression(5);
+						setState(29); expression(5);
 						}
 						break;
 
@@ -373,22 +319,22 @@ public class SimpleParser extends Parser {
 						{
 						_localctx = new AddSubContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(34);
+						setState(30);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(35);
+						setState(31);
 						((AddSubContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==ADD || _la==SUB) ) {
 							((AddSubContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(36); expression(4);
+						setState(32); expression(4);
 						}
 						break;
 					}
 					} 
 				}
-				setState(41);
+				setState(37);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,3,_ctx);
 			}
@@ -407,7 +353,7 @@ public class SimpleParser extends Parser {
 
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 3: return expression_sempred((ExpressionContext)_localctx, predIndex);
+		case 2: return expression_sempred((ExpressionContext)_localctx, predIndex);
 		}
 		return true;
 	}
@@ -421,18 +367,18 @@ public class SimpleParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\17-\4\2\t\2\4\3\t"+
-		"\3\4\4\t\4\4\5\t\5\3\2\3\2\3\3\3\3\3\3\3\3\7\3\21\n\3\f\3\16\3\24\13\3"+
-		"\3\3\3\3\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\5\5 \n\5\3\5\3\5\3\5\3\5\3\5"+
-		"\3\5\7\5(\n\5\f\5\16\5+\13\5\3\5\2\3\b\6\2\4\6\b\2\4\3\2\b\n\3\2\13\f"+
-		",\2\n\3\2\2\2\4\f\3\2\2\2\6\27\3\2\2\2\b\37\3\2\2\2\n\13\5\4\3\2\13\3"+
-		"\3\2\2\2\f\22\7\6\2\2\r\16\5\6\4\2\16\17\7\5\2\2\17\21\3\2\2\2\20\r\3"+
-		"\2\2\2\21\24\3\2\2\2\22\20\3\2\2\2\22\23\3\2\2\2\23\25\3\2\2\2\24\22\3"+
-		"\2\2\2\25\26\7\7\2\2\26\5\3\2\2\2\27\30\5\b\5\2\30\7\3\2\2\2\31\32\b\5"+
-		"\1\2\32 \7\16\2\2\33\34\7\3\2\2\34\35\5\b\5\2\35\36\7\4\2\2\36 \3\2\2"+
-		"\2\37\31\3\2\2\2\37\33\3\2\2\2 )\3\2\2\2!\"\f\6\2\2\"#\t\2\2\2#(\5\b\5"+
-		"\7$%\f\5\2\2%&\t\3\2\2&(\5\b\5\6\'!\3\2\2\2\'$\3\2\2\2(+\3\2\2\2)\'\3"+
-		"\2\2\2)*\3\2\2\2*\t\3\2\2\2+)\3\2\2\2\6\22\37\')";
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\17)\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\3\2\3\2\3\3\3\3\3\3\3\3\7\3\17\n\3\f\3\16\3\22\13\3\3\3\3\3"+
+		"\3\4\3\4\3\4\3\4\3\4\3\4\5\4\34\n\4\3\4\3\4\3\4\3\4\3\4\3\4\7\4$\n\4\f"+
+		"\4\16\4\'\13\4\3\4\2\3\6\5\2\4\6\2\4\3\2\b\n\3\2\13\f)\2\b\3\2\2\2\4\n"+
+		"\3\2\2\2\6\33\3\2\2\2\b\t\5\4\3\2\t\3\3\2\2\2\n\20\7\6\2\2\13\f\5\6\4"+
+		"\2\f\r\7\5\2\2\r\17\3\2\2\2\16\13\3\2\2\2\17\22\3\2\2\2\20\16\3\2\2\2"+
+		"\20\21\3\2\2\2\21\23\3\2\2\2\22\20\3\2\2\2\23\24\7\7\2\2\24\5\3\2\2\2"+
+		"\25\26\b\4\1\2\26\34\7\16\2\2\27\30\7\3\2\2\30\31\5\6\4\2\31\32\7\4\2"+
+		"\2\32\34\3\2\2\2\33\25\3\2\2\2\33\27\3\2\2\2\34%\3\2\2\2\35\36\f\6\2\2"+
+		"\36\37\t\2\2\2\37$\5\6\4\7 !\f\5\2\2!\"\t\3\2\2\"$\5\6\4\6#\35\3\2\2\2"+
+		"# \3\2\2\2$\'\3\2\2\2%#\3\2\2\2%&\3\2\2\2&\7\3\2\2\2\'%\3\2\2\2\6\20\33"+
+		"#%";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

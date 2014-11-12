@@ -5,11 +5,7 @@ program
     ;
 
 block
-    : '{' (statement ';')* '}'
-    ;
-
-statement
-    : expression
+    : '{' (expression ';')* '}'
     ;
 
 expression

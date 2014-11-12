@@ -4,9 +4,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by Wouter on 11/8/2014.
+ * Configuration for the Meling grammar.
+ * Created by Wouter on 11/12/2014.
  */
 @Configuration
-@ComponentScan(value = {"com.github.watersoft.main"})
-public class ApplicationConfiguration {
+@ComponentScan(value = {"com.github.watersoft.main.interpreter.meling"})
+public class MelingConfiguration {
 }
