@@ -1,13 +1,18 @@
 package com.github.watersoft.main;
 
 import com.github.watersoft.main.config.SimpleConfiguration;
-import com.github.watersoft.main.interpreter.simple.ExpressionVisitor;
+import com.github.watersoft.main.interpreter.simple.BlockVisitor;
 import com.github.watersoft.main.interpreter.simple.ParseTreeFactory;
+import com.github.watersoft.main.parser.simple.SimpleParser;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Launcher for the application.
@@ -25,14 +30,28 @@ public class Launcher {
      */
     public final void run() {
         ApplicationContext context = new AnnotationConfigApplicationContext(SimpleConfiguration.class);
-
-        LOGGER.info("Getting parse tree.");
         ParseTreeFactory factory = context.getBean(ParseTreeFactory.class);
-        ParseTree tree = factory.getProgramTree("{1+2*3;1*2+3;(1+2)*3;}");
 
-        LOGGER.info("Visiting parse tree.");
-        ExpressionVisitor visitor = context.getBean(ExpressionVisitor.class);
-        visitor.visit(tree);
+        BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter expressions to evaluate them.");
+        System.out.println("Type 'exit' to stop the application.");
+        String line;
+        do {
+            try {
+                line = buffer.readLine();
+            } catch (IOException e) {
+                LOGGER.error(e.getMessage(), e);
+                LOGGER.info("Terminating.");
+                return;
+            }
+
+            LOGGER.info("Getting parse tree.");
+            ParseTree tree = factory.getProgramTree("{" + line + ";}");
+            LOGGER.info("Visiting parse tree.");
+            BlockVisitor visitor = context.getBean(BlockVisitor.class);
+            SimpleParser.BlockContext blockContext = (SimpleParser.BlockContext) tree.getChild(0);
+            System.out.println(visitor.visit(blockContext));
+        } while (line.toLowerCase() != "exit");
     }
 
     /**
