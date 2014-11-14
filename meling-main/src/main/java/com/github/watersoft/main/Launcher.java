@@ -51,7 +51,7 @@ public class Launcher {
             BlockVisitor visitor = context.getBean(BlockVisitor.class);
             SimpleParser.BlockContext blockContext = (SimpleParser.BlockContext) tree.getChild(0);
             System.out.println(visitor.visit(blockContext));
-        } while (line.toLowerCase() != "exit");
+        } while (!line.equalsIgnoreCase("exit"));
     }
 
     /**
