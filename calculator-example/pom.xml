@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>watersoft-meling-main</artifactId>
+    <artifactId>calculator-example</artifactId>
 
     <dependencies>
         <dependency>
@@ -52,12 +52,11 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.watersoft.launcher.Launcher</mainClass>
+                            <mainClass>com.watersoft.calculator.launcher.Launcher</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>

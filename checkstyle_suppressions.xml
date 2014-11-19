@@ -5,7 +5,6 @@
         "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
 
 <suppressions>
-    <suppress files="TheClassToIgnore\.java" checks="[a-zA-Z0-9]*"/>
-    <suppress checks="." files="com[\\/]github[\\/]watersoft[\\/]main[\\/]parser[\\/]simple[\\/]"/>
-    <suppress checks="." files="com[\\/]github[\\/]watersoft[\\/]main[\\/]parser[\\/]meling[\\/]"/>
+    <suppress checks="." files="com[\\/]watersoft[\\/]parser[\\/]"/>
+    <suppress checks="." files="com[\\/]watersoft[\\/]calculator[\\/]parser[\\/]"/>
 </suppressions>
